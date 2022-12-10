@@ -17,12 +17,13 @@ import products from "./data.js";
     ]
 */
 
-function getSaleItems(data){
-    const candy = 
-        data.filter(n => {return n.type === "sweet"})
-            .map(n => "item:" + n.item + ", price: " + n.price );
-    // console.log(candy);
-    console.log(candy);
+function getSaleItems(data) {
+  const candy = data
+    .filter((n) => {
+      return n.type === "sweet";
+    })
+    .map((n) => "item:" + n.item + ", price: " + n.price);
+  console.log(candy);
 }
 
 getSaleItems(products);
