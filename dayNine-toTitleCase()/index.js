@@ -16,10 +16,9 @@ Hint: Trying using slice() and .toUpperCase()
 */
 
 function capitalizeWord(word){
-    const wordArray = word.slice(1, word.length);
-    const capLet = word[0].toUpperCase()
-    const capWord = capLet.concat(wordArray)
-    console.log(capWord)
+    word = word.split('')
+    word[0] = word[0].toUpperCase()
+    return word.join('')
 }
 
 /* 
@@ -28,10 +27,12 @@ How can you reuse the function you just wrote?
 */ 
 
 function toTitleCase(str){
-    const sentence = str.split(' ')
-    console.log(sentence)
+    const words = str.split(' ')
+    const sentence = words.map(capitalizeWord)
+    return sentence.join(' ')
+    
 }
 
 // Test your functions
 console.log(capitalizeWord("pumpkin"));
-// console.log(toTitleCase("pumpkin pranced purposefully across the pond"));
+console.log(toTitleCase("pumpkin pranced purposefully across the pond"));
