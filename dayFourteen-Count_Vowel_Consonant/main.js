@@ -1,9 +1,7 @@
 function countVowelConsonant(str) {
   // write code here
-  const noVowels = str.replace(/[aeiou]/gi, '');
-  const noCons = str.replace(/[^aeiou]/gi, '')
-  console.log(noVowels)
-  console.log(noCons)
+  const letters = str.split('')
+  return letters.reduce((total, num) => /[aeiou]/.test(num) ? total + 1 : total + 2, 0)
 }
 
 
